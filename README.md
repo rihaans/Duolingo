@@ -1,37 +1,38 @@
-# Duolingo Clone - Language Learning Web Application
+# Duolingo Clone - Spanish Learning Web Application
 
-A comprehensive, production-ready web application that faithfully replicates Duolingo's UI/UX and core features, built as a full-stack MERN application with TypeScript.
+A full-stack web application that replicates Duolingo's UI/UX and core features for learning Spanish, built with React, TypeScript, Node.js, and MongoDB.
 
-![Status](https://img.shields.io/badge/status-production%20ready-success)
-![TypeScript](https://img.shields.io/badge/TypeScript-100%25-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+![Express](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
 ## 🌟 Features
 
 ### Core Functionality
-- **User Authentication** - Complete JWT-based auth system with secure signup/login
-- **Interactive Lessons** - 7+ different question types for engaging learning
-- **Spanish Course** - 15 skills across 8 units with 180+ questions
-- **Progress Tracking** - XP, levels, streaks, and achievements
-- **Gamification** - Hearts system, daily goals, leaderboards
-- **Practice Mode** - Unlimited hearts, review completed lessons
-- **Responsive Design** - Fully responsive on mobile, tablet, and desktop
+- **User Authentication** - JWT-based auth system with signup/login
+- **Interactive Lessons** - 7+ different question types (translation, multiple choice, listening, etc.)
+- **Spanish Course** - Multiple skills with comprehensive lessons
+- **Progress Tracking** - XP points, user levels, daily streaks
+- **Gamification** - Hearts/lives system, daily goals, leaderboards
+- **Practice Mode** - Review completed lessons
+- **Responsive Design** - Works on mobile, tablet, and desktop
 
 ### User Experience
 - ✨ Smooth animations with Framer Motion
-- 🎵 Dynamic sound effects (Web Audio API)
-- 🎨 Pixel-perfect Duolingo design replication
-- 🌈 Colorful, encouraging UI with celebrations
-- ⚡ Fast and optimized performance
-- ♿ Accessible keyboard navigation
+- 🎵 Sound effects for correct/incorrect answers
+- 🎨 Duolingo-inspired design and color scheme
+- 🌈 Colorful, engaging UI with celebration effects
+- ⚡ Fast performance with Vite
 
 ### Technical Highlights
 - **Modern Stack**: React 18, TypeScript, Node.js, MongoDB
-- **Clean Architecture**: Modular, maintainable, production-ready code
+- **Clean Architecture**: Modular component structure
 - **State Management**: Context API with custom hooks
-- **Real-time Feedback**: Immediate answer validation and XP updates
-- **Global State**: Progress and course data managed centrally
-- **Error Handling**: Comprehensive error handling throughout
+- **RESTful API**: Express.js backend with proper routing
+- **Type Safety**: Full TypeScript implementation
 
 ## 📚 Table of Contents
 
@@ -39,40 +40,56 @@ A comprehensive, production-ready web application that faithfully replicates Duo
 - [Tech Stack](#-tech-stack)
 - [Prerequisites](#-prerequisites)
 - [Installation](#-installation)
+- [Available Scripts](#-available-scripts)
 - [Environment Variables](#-environment-variables)
 - [Running the Application](#-running-the-application)
 - [Project Structure](#-project-structure)
 - [API Endpoints](#-api-endpoints)
 - [Question Types](#-question-types)
+- [Architecture](#-architecture)
 - [Screenshots](#-screenshots)
 - [Known Issues](#-known-issues)
+- [Troubleshooting](#-troubleshooting)
+- [Deployment](#-deployment)
 - [Future Enhancements](#-future-enhancements)
-- [Author](#-author)
+- [Contributing](#-contributing)
+- [License](#-license)
 
 ## 🛠 Tech Stack
 
 ### Frontend
-- **React 18** - Modern React with hooks
-- **TypeScript** - Type-safe development
-- **Vite** - Lightning-fast build tool
-- **Tailwind CSS** - Utility-first CSS framework
-- **Framer Motion** - Smooth animations
-- **React Router v6** - Client-side routing
-- **Axios** - HTTP client
-- **React Hot Toast** - Toast notifications
-- **Lucide React** - Beautiful icons
+| Technology | Version | Purpose |
+|------------|---------|---------|
+| **React** | ^18.2.0 | UI library with modern hooks |
+| **TypeScript** | ^5.3.2 | Type-safe development |
+| **Vite** | ^5.0.0 | Lightning-fast build tool and dev server |
+| **Tailwind CSS** | ^3.3.5 | Utility-first CSS framework |
+| **Framer Motion** | ^10.16.0 | Smooth animations and transitions |
+| **React Router** | ^6.20.0 | Client-side routing |
+| **Axios** | ^1.6.0 | HTTP client for API requests |
+| **React Hot Toast** | ^2.4.1 | Toast notifications |
+| **Lucide React** | ^0.294.0 | Beautiful SVG icons |
+| **React Confetti** | ^6.1.0 | Celebration effects |
 
 ### Backend
-- **Node.js** - JavaScript runtime
-- **Express.js** - Web application framework
-- **TypeScript** - Type-safe backend
-- **MongoDB** - NoSQL database
-- **Mongoose** - MongoDB ODM
-- **JWT** - JSON Web Tokens for auth
-- **bcryptjs** - Password hashing
-- **express-validator** - Input validation
-- **Helmet** - Security headers
-- **CORS** - Cross-origin resource sharing
+| Technology | Version | Purpose |
+|------------|---------|---------|
+| **Node.js** | v18+ | JavaScript runtime environment |
+| **Express.js** | ^4.18.2 | Web application framework |
+| **TypeScript** | ^5.3.2 | Type-safe backend development |
+| **MongoDB** | v6+ | NoSQL database |
+| **Mongoose** | ^8.0.0 | MongoDB ODM for data modeling |
+| **JWT** | ^9.0.2 | JSON Web Tokens for authentication |
+| **bcryptjs** | ^2.4.3 | Password hashing |
+| **express-validator** | ^7.0.1 | Input validation middleware |
+| **Helmet** | ^7.1.0 | Security headers |
+| **CORS** | ^2.8.5 | Cross-origin resource sharing |
+| **express-rate-limit** | ^7.1.5 | Rate limiting middleware |
+
+### Development Tools
+- **ts-node-dev** - TypeScript development with hot reload
+- **PostCSS** - CSS processing
+- **Autoprefixer** - CSS vendor prefixing
 
 ## ⚙️ Prerequisites
 
@@ -136,6 +153,23 @@ Verify MongoDB is running:
 \`\`\`bash
 mongosh
 \`\`\`
+
+## 📜 Available Scripts
+
+### Backend (server/)
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server with hot reload (ts-node-dev) |
+| `npm run build` | Compile TypeScript to JavaScript (outputs to dist/) |
+| `npm start` | Run production build from dist/ |
+| `npm run clean-db` | Clean/reset the database |
+
+### Frontend (client/)
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start Vite development server (http://localhost:5173) |
+| `npm run build` | Build for production (TypeScript check + Vite build) |
+| `npm run preview` | Preview production build locally |
 
 ## 🔐 Environment Variables
 
@@ -331,63 +365,276 @@ User stats, achievements, streak, and level information.
 ### Leaderboard
 Weekly and all-time rankings with user position highlighted.
 
+## 🏗️ Architecture
+
+### Application Architecture
+```
+┌─────────────────────────────────────────────────────────────┐
+│                         Client (React)                       │
+│  ┌────────────────────────────────────────────────────────┐ │
+│  │  Components: Auth, Dashboard, Lesson, Profile, etc.    │ │
+│  └────────────────────────────────────────────────────────┘ │
+│  ┌────────────────────────────────────────────────────────┐ │
+│  │  Context API: Auth, Progress, Course State Management  │ │
+│  └────────────────────────────────────────────────────────┘ │
+│  ┌────────────────────────────────────────────────────────┐ │
+│  │  Services: API calls, Axios interceptors              │ │
+│  └────────────────────────────────────────────────────────┘ │
+└──────────────────────┬───────────────────────────────────────┘
+                       │ HTTP/REST API
+┌──────────────────────┴───────────────────────────────────────┐
+│                      Server (Express)                         │
+│  ┌────────────────────────────────────────────────────────┐ │
+│  │  Routes: auth, course, lesson, progress, leaderboard  │ │
+│  └────────────────────────────────────────────────────────┘ │
+│  ┌────────────────────────────────────────────────────────┐ │
+│  │  Controllers: Handle requests and responses            │ │
+│  └────────────────────────────────────────────────────────┘ │
+│  ┌────────────────────────────────────────────────────────┐ │
+│  │  Services: Business logic (XP, streaks, levels)        │ │
+│  └────────────────────────────────────────────────────────┘ │
+│  ┌────────────────────────────────────────────────────────┐ │
+│  │  Models: Mongoose schemas (User, Progress, etc.)       │ │
+│  └────────────────────────────────────────────────────────┘ │
+└──────────────────────┬───────────────────────────────────────┘
+                       │ Mongoose ODM
+┌──────────────────────┴───────────────────────────────────────┐
+│                      MongoDB Database                         │
+│  ┌────────────┐  ┌────────────┐  ┌──────────────────────┐  │
+│  │   Users    │  │  Progress  │  │  Achievements        │  │
+│  └────────────┘  └────────────┘  └──────────────────────┘  │
+└───────────────────────────────────────────────────────────────┘
+```
+
+### Key Design Patterns
+- **MVC Pattern**: Models, Controllers, and Views separation
+- **Service Layer**: Business logic separated from controllers
+- **Repository Pattern**: Mongoose models abstract database operations
+- **Context API**: Global state management on the frontend
+- **Custom Hooks**: Reusable stateful logic
+- **Composition**: Small, reusable React components
+
 ## ⚠️ Known Issues
 
-- **Sound Effects**: Currently using Web Audio API generated sounds. For production, replace with professional audio files in `client/public/sounds/`
-- **Images**: Placeholder emojis used. Add professional images to `client/public/images/` for production
-- **Streak Timer**: Daily streak resets at midnight UTC. Consider adding timezone support
+- **Sound Effects**: Currently using Web Audio API generated sounds
+- **Images**: Placeholder emojis and icons used for vocabulary items
+- **Streak Timer**: Daily streak resets at midnight UTC (no timezone support yet)
 - **Mobile Safari**: Audio playback may require user interaction on first load
 
-## 🚀 Future Enhancements
+## 🐛 Troubleshooting
 
-### Features
-- [ ] Multiple language courses (French, German, etc.)
-- [ ] Speaking questions with speech recognition
-- [ ] Stories feature for immersive reading
-- [ ] Friend system and social features
+### MongoDB Connection Issues
+**Problem**: `MongooseServerSelectionError: connect ECONNREFUSED`
+
+**Solutions**:
+```bash
+# Check if MongoDB is running
+mongosh
+
+# Start MongoDB (Windows)
+mongod
+
+# Start MongoDB (Mac/Linux)
+sudo systemctl start mongod
+# or
+brew services start mongodb-community
+
+# Check MongoDB status
+mongosh --eval "db.adminCommand('ping')"
+```
+
+### Port Already in Use
+**Problem**: `Error: listen EADDRINUSE: address already in use :::5000`
+
+**Solutions**:
+```bash
+# Find and kill process on port 5000 (Windows)
+netstat -ano | findstr :5000
+taskkill /PID <PID> /F
+
+# Find and kill process on port 5000 (Mac/Linux)
+lsof -ti:5000 | xargs kill -9
+```
+
+### CORS Errors
+**Problem**: `Access to XMLHttpRequest blocked by CORS policy`
+
+**Solution**: Ensure the backend `.env` file has the correct `CORS_ORIGIN`:
+```env
+CORS_ORIGIN=http://localhost:5173
+```
+
+### TypeScript Compilation Errors
+**Problem**: TypeScript errors after installing dependencies
+
+**Solutions**:
+```bash
+# Clean and reinstall dependencies
+cd client
+rm -rf node_modules package-lock.json
+npm install
+
+cd ../server
+rm -rf node_modules package-lock.json
+npm install
+```
+
+### Frontend Build Errors
+**Problem**: Vite build fails
+
+**Solutions**:
+```bash
+# Clear Vite cache
+cd client
+rm -rf node_modules/.vite
+npm run dev
+```
+
+### Environment Variables Not Loading
+**Problem**: Application can't connect to database or API
+
+**Solution**: Ensure `.env` files exist in both `client` and `server` directories with correct values:
+- `server/.env` - Backend configuration
+- `client/.env` - Frontend configuration
+
+## 🚀 Deployment
+
+### Building for Production
+
+**Backend:**
+```bash
+cd server
+npm run build
+npm start
+```
+
+**Frontend:**
+```bash
+cd client
+npm run build
+npm run preview
+```
+
+### Deployment Options
+
+**Backend** - Deploy to platforms like Heroku, Railway, Render, or any Node.js hosting
+**Frontend** - Deploy to Vercel, Netlify, or any static hosting service
+
+### Production Environment Variables
+
+**Backend (.env):**
+```env
+NODE_ENV=production
+MONGODB_URI=your-mongodb-atlas-connection-string
+JWT_SECRET=your-secure-random-secret
+CORS_ORIGIN=https://your-frontend-domain.com
+```
+
+**Frontend (.env):**
+```env
+VITE_API_URL=https://your-backend-domain.com/api
+```
+
+## 🔮 Future Enhancements
+
+### Potential Features
+- [ ] Additional language courses (French, German, etc.)
+- [ ] More question types (speaking with speech recognition)
 - [ ] Streak freeze and power-ups
-- [ ] In-depth statistics and analytics
-- [ ] Push notifications for streak reminders
-- [ ] Offline mode support
+- [ ] Enhanced statistics and analytics
+- [ ] Dark mode theme
+- [ ] Friend system for competitive learning
 
-### Technical
+### Technical Improvements
 - [ ] Unit and integration tests
-- [ ] End-to-end testing with Cypress
-- [ ] Performance optimization
-- [ ] Server-side rendering (SSR)
-- [ ] Progressive Web App (PWA)
-- [ ] CI/CD pipeline
+- [ ] End-to-end testing
+- [ ] Performance optimization (code splitting, lazy loading)
+- [ ] Progressive Web App (PWA) features
 - [ ] Docker containerization
-- [ ] Kubernetes deployment
 
-## 👤 Author
+## 🤝 Contributing
 
-**Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Name](https://linkedin.com/in/yourprofile)
-- Email: your.email@example.com
+Contributions are welcome! Please follow these steps:
+
+1. **Fork the repository**
+   ```bash
+   git clone https://github.com/your-username/duolingo-clone.git
+   ```
+
+2. **Create a feature branch**
+   ```bash
+   git checkout -b feature/amazing-feature
+   ```
+
+3. **Make your changes and commit**
+   ```bash
+   git commit -m "Add amazing feature"
+   ```
+
+4. **Push to your branch**
+   ```bash
+   git push origin feature/amazing-feature
+   ```
+
+5. **Open a Pull Request**
+
+### Code Style Guidelines
+- Use TypeScript for all new files
+- Follow existing code formatting
+- Write meaningful commit messages
+- Add comments for complex logic
+
 
 ## 📝 License
 
-This project is created for educational purposes as part of a job application assignment.
+This project is created for educational purposes. Feel free to use it as a learning resource.
+
+**Note**: Duolingo is a registered trademark. This project is not affiliated with, endorsed by, or connected to Duolingo.
+
+## 👥 Authors
+
+Created with dedication and attention to detail for educational purposes.
 
 ## 🙏 Acknowledgments
 
-- Duolingo for the original design inspiration
-- The open-source community for amazing libraries
-- All contributors and testers
+- **Duolingo** - For the original design inspiration
+- **Open Source Community** - For the amazing libraries and tools used in this project
+
+
 
 ---
 
 ## 💡 Quick Start Guide
 
-1. Ensure MongoDB is running
-2. Start backend: `cd server && npm run dev`
-3. Start frontend: `cd client && npm run dev`
-4. Open http://localhost:5173
-5. Sign up for a new account
-6. Start learning Spanish!
+1. **Ensure MongoDB is running**
+   ```bash
+   mongosh  # Should connect successfully
+   ```
 
-For issues or questions, please open an issue on GitHub.
+2. **Start the backend**
+   ```bash
+   cd server
+   npm run dev
+   ```
+
+3. **Start the frontend** (in a new terminal)
+   ```bash
+   cd client
+   npm run dev
+   ```
+
+4. **Open your browser**
+   - Navigate to `http://localhost:5173`
+   - Sign up for a new account
+   - Start learning Spanish!
+
+---
+
+<div align="center">
+
+**Made with ❤️ using React, Node.js, and MongoDB**
 
 **Happy Learning! 📚🎉**
+
+
+</div>
