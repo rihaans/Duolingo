@@ -1,0 +1,293 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Duolingo Design System CSS */
+:root {
+  /* Primary Green */
+  --duo-green: #58CC02;
+  --duo-green-hover: #58A700;
+  --duo-green-dark: #478600;
+  --duo-green-light: #89E219;
+
+  /* Secondary Blue */
+  --duo-blue: #1CB0F6;
+  --duo-blue-hover: #14A0E0;
+  --duo-blue-dark: #0E8EC4;
+
+  /* Error Red */
+  --duo-red: #FF4B4B;
+  --duo-red-hover: #EA2B2B;
+  --duo-red-dark: #D41F1F;
+
+  /* Warning Yellow */
+  --duo-yellow: #FFC800;
+  --duo-yellow-hover: #FFB800;
+  --duo-yellow-dark: #FFA700;
+
+  /* Purple */
+  --duo-purple: #CE82FF;
+
+  /* Backgrounds */
+  --duo-bg-correct: #D7FFB8;
+  --duo-bg-incorrect: #FFD7D7;
+  --duo-bg-warning: #FFF4CC;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #F7F7F7;
+  color: #3C3C3C;
+}
+
+/* Duolingo Button Styles */
+@layer components {
+  .btn-duo {
+    @apply font-bold uppercase tracking-wide transition-all duration-100 cursor-pointer;
+    @apply rounded-duo px-8 py-4 text-lg;
+    @apply border-none relative;
+  }
+
+  .btn-duo-primary {
+    @apply btn-duo text-white;
+    background: linear-gradient(180deg, #58CC02 0%, #58A700 100%);
+    box-shadow: 0 4px 0 0 #478600;
+  }
+
+  .btn-duo-primary:hover {
+    background: linear-gradient(180deg, #58A700 0%, #478600 100%);
+    box-shadow: 0 2px 0 0 #478600;
+    transform: translateY(2px);
+  }
+
+  .btn-duo-primary:active {
+    box-shadow: none;
+    transform: translateY(4px);
+  }
+
+  .btn-duo-primary:disabled {
+    background: linear-gradient(180deg, #E5E5E5 0%, #CECECE 100%);
+    box-shadow: 0 4px 0 0 #AFAFAF;
+    color: #AFAFAF;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .btn-duo-secondary {
+    @apply btn-duo text-duo-gray-700 bg-white;
+    border: 2px solid #E5E5E5;
+    box-shadow: 0 4px 0 0 #CECECE;
+  }
+
+  .btn-duo-secondary:hover {
+    @apply bg-duo-gray-50;
+    box-shadow: 0 2px 0 0 #CECECE;
+    transform: translateY(2px);
+  }
+
+  .btn-duo-secondary:active {
+    box-shadow: none;
+    transform: translateY(4px);
+  }
+
+  .btn-duo-danger {
+    @apply btn-duo text-white;
+    background: linear-gradient(180deg, #FF4B4B 0%, #EA2B2B 100%);
+    box-shadow: 0 4px 0 0 #D41F1F;
+  }
+
+  .btn-duo-danger:hover {
+    background: linear-gradient(180deg, #EA2B2B 0%, #D41F1F 100%);
+    box-shadow: 0 2px 0 0 #D41F1F;
+    transform: translateY(2px);
+  }
+
+  /* Card Styles */
+  .card-duo {
+    @apply bg-white rounded-duo p-5;
+    border: 2px solid #E5E5E5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease;
+  }
+
+  .card-duo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Answer Option Button */
+  .answer-option {
+    @apply w-full p-5 bg-white text-left text-lg font-semibold text-duo-gray-800;
+    @apply rounded-duo cursor-pointer transition-all duration-200;
+    border: 3px solid #E5E5E5;
+  }
+
+  .answer-option:hover {
+    @apply bg-duo-gray-50;
+    border-color: #CECECE;
+    transform: scale(1.02);
+  }
+
+  .answer-option.selected {
+    background: #D7FFB8;
+    border-color: #58CC02;
+    border-width: 4px;
+  }
+
+  .answer-option.correct {
+    background: #D7FFB8;
+    border-color: #58CC02;
+  }
+
+  .answer-option.incorrect {
+    background: #FFD7D7;
+    border-color: #FF4B4B;
+  }
+
+  /* Skill Node */
+  .skill-node {
+    @apply w-20 h-20 rounded-full flex items-center justify-center cursor-pointer;
+    @apply transition-all duration-200 relative;
+    border: 4px solid transparent;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+  }
+
+  .skill-node.locked {
+    @apply bg-duo-gray-100;
+    border-color: #CECECE;
+  }
+
+  .skill-node.available {
+    background: linear-gradient(135deg, #FFD43B 0%, #FFC800 100%);
+    border-color: #FFB800;
+  }
+
+  .skill-node.in-progress {
+    background: linear-gradient(135deg, #4EC3FF 0%, #1CB0F6 100%);
+    border-color: #14A0E0;
+  }
+
+  .skill-node.completed {
+    background: linear-gradient(135deg, #89E219 0%, #58CC02 100%);
+    border-color: #478600;
+  }
+
+  .skill-node:hover:not(.locked) {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.16);
+  }
+
+  /* Progress Bar */
+  .progress-bar {
+    @apply h-4 bg-duo-gray-100 rounded-full overflow-hidden;
+  }
+
+  .progress-fill {
+    @apply h-full rounded-full transition-all duration-300;
+    background: linear-gradient(90deg, #58CC02 0%, #89E219 100%);
+  }
+
+  /* Hearts */
+  .heart {
+    @apply text-2xl;
+  }
+
+  .heart.full {
+    color: #FF4B4B;
+  }
+
+  .heart.empty {
+    color: #E5E5E5;
+  }
+
+  /* Streak Flame */
+  .streak-flame {
+    @apply inline-flex items-center gap-1.5 px-3 py-2 rounded-xl;
+    background: #FFF4CC;
+    border: 2px solid #FFC800;
+  }
+
+  /* Input Styles */
+  .input-duo {
+    @apply w-full px-4 py-3 text-lg rounded-duo bg-white;
+    @apply border-2 border-duo-gray-200 outline-none;
+    @apply transition-all duration-200;
+  }
+
+  .input-duo:focus {
+    @apply border-duo-blue;
+    box-shadow: 0 0 0 3px rgba(28, 176, 246, 0.2);
+  }
+
+  .input-duo.error {
+    @apply border-duo-red;
+    box-shadow: 0 0 0 3px rgba(255, 75, 75, 0.2);
+  }
+}
+
+/* Animations */
+@keyframes heartBreak {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2) rotate(10deg); }
+  100% { transform: scale(0) rotate(45deg); opacity: 0; }
+}
+
+@keyframes xpAppear {
+  0% { opacity: 0; transform: scale(0.5) translateY(20px); }
+  50% { transform: scale(1.1); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes skillUnlock {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.animate-heartBreak {
+  animation: heartBreak 0.5s ease forwards;
+}
+
+.animate-xpAppear {
+  animation: xpAppear 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.animate-skillUnlock {
+  animation: skillUnlock 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.animate-shake {
+  animation: shake 0.3s ease-in-out;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7F7F7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CECECE;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #AFAFAF;
+}
