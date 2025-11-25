@@ -243,65 +243,79 @@ npm run preview
 
 ## 📁 Project Structure
 
-\`\`\`
+```text
 duolingo-clone/
-├── client/                    # Frontend React application
+│
+├── client/                           # Frontend React application
+│   │
 │   ├── public/
-│   │   ├── sounds/           # Audio files (correct, incorrect, etc.)
-│   │   └── images/           # Images (mascot, skills, vocabulary)
+│   │   ├── sounds/                  # Audio files (correct, incorrect, etc.)
+│   │   └── images/                  # Images (mascot, skills, vocabulary)
+│   │
 │   ├── src/
-│   │   ├── components/       # React components
-│   │   │   ├── Auth/         # Login, Signup, Onboarding
-│   │   │   ├── Dashboard/    # Learning path, daily goal
-│   │   │   ├── Lesson/       # Lesson system and question types
-│   │   │   ├── Profile/      # User profile
-│   │   │   ├── Leaderboard/  # Rankings
-│   │   │   └── UI/           # Reusable UI components
-│   │   ├── context/          # React Context providers
+│   │   ├── components/              # React components
+│   │   │   ├── Auth/                # Login, Signup, Onboarding
+│   │   │   ├── Dashboard/           # Learning path, daily goal
+│   │   │   ├── Lesson/              # Lesson system and question types
+│   │   │   ├── Profile/             # User profile
+│   │   │   ├── Leaderboard/         # Rankings
+│   │   │   └── UI/                  # Reusable UI components
+│   │   │
+│   │   ├── context/                 # React Context providers
 │   │   │   ├── AuthContext.tsx
 │   │   │   ├── ProgressContext.tsx
 │   │   │   └── CourseContext.tsx
-│   │   ├── hooks/            # Custom React hooks
-│   │   ├── pages/            # Page components
-│   │   ├── services/         # API service layer
-│   │   ├── types/            # TypeScript type definitions
-│   │   ├── utils/            # Utility functions
-│   │   ├── App.tsx           # Main app component
-│   │   └── main.tsx          # Entry point
+│   │   │
+│   │   ├── hooks/                   # Custom React hooks
+│   │   ├── pages/                   # Page components
+│   │   ├── services/                # API service layer
+│   │   ├── types/                   # TypeScript type definitions
+│   │   ├── utils/                   # Utility functions
+│   │   ├── App.tsx                  # Main app component
+│   │   └── main.tsx                 # Entry point
+│   │
 │   └── package.json
 │
-├── server/                    # Backend Node.js application
+├── server/                           # Backend Node.js application
+│   │
 │   ├── src/
-│   │   ├── config/           # Database and environment config
-│   │   ├── controllers/      # Request handlers
+│   │   ├── config/                  # Database and environment config
+│   │   │
+│   │   ├── controllers/             # Request handlers
 │   │   │   ├── auth.controller.ts
 │   │   │   ├── course.controller.ts
 │   │   │   ├── lesson.controller.ts
 │   │   │   └── progress.controller.ts
-│   │   ├── models/           # Mongoose schemas
+│   │   │
+│   │   ├── models/                  # Mongoose schemas
 │   │   │   ├── User.model.ts
 │   │   │   ├── Progress.model.ts
 │   │   │   ├── Achievement.model.ts
 │   │   │   └── Mistake.model.ts
-│   │   ├── services/         # Business logic
+│   │   │
+│   │   ├── services/                # Business logic
 │   │   │   ├── auth.service.ts
 │   │   │   ├── xp.service.ts
 │   │   │   ├── level.service.ts
 │   │   │   ├── streak.service.ts
 │   │   │   ├── hearts.service.ts
 │   │   │   └── achievement.service.ts
-│   │   ├── routes/           # API routes
-│   │   ├── middleware/       # Express middleware
-│   │   ├── data/             # Static data (course content)
+│   │   │
+│   │   ├── routes/                  # API routes
+│   │   ├── middleware/              # Express middleware
+│   │   │
+│   │   ├── data/                    # Static data (course content)
 │   │   │   ├── spanishCourseData.ts
 │   │   │   └── achievementsData.ts
-│   │   └── server.ts         # Server entry point
+│   │   │
+│   │   └── server.ts                # Server entry point
+│   │
 │   └── package.json
 │
-├── .env.example              # Environment variable templates
-├── README.md                 # This file
-└── PROGRESS.md              # Development progress tracker
-\`\`\`
+├── .env.example                      # Environment variable templates
+├── README.md                         # This file
+└── PROGRESS.md                       # Development progress tracker
+```
 
 ## 🌐 API Endpoints
 
